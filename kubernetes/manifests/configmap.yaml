@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sdr-config
+data:
+  config: |
+    # Configuration data

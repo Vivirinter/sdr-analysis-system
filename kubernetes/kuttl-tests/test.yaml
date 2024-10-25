@@ -1,0 +1,8 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+commands:
+  - command: kubectl apply -f ../manifests/deployment.yaml
+  - command: kubectl apply -f ../manifests/service.yaml
+assert:
+  - timeout: 60
+    command: kubectl get pods -l app=sdr-api-server

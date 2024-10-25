@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sdr-api-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sdr-api-server
+  template:
+    metadata:
+      labels:
+        app: sdr-api-server
+    spec:
+      containers:
+        - name: api-server
+          image: "sdr-api-server:latest"
+          ports:
+            - containerPort: 8080
